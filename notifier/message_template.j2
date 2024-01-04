@@ -1,0 +1,21 @@
+{% if title %}
+<b>{{ title }}</b>
+
+{% endif %}
+{% if message %}
+{{ message }}
+
+{% endif %}
+<b>ID:</b> {{ id }}
+<b>Topic:</b> #{{ topic }}
+{% if priority %}
+<b>Priority:</b> {{ priority }}
+{% endif %}
+<b>Post time:</b> {{ time.strftime('%Y-%m-%d %H:%M:%S') }}
+{% if expires %}
+<b>Expires time:</b> {{ expires.strftime('%Y-%m-%d %H:%M:%S') }}
+{% endif %}
+<b>Event type:</b> {{ event }}
+{% if tags %}
+<b>Tags:</b> {% for tag in tags %} #{{ tag }} {% endfor %}
+{% endif %}

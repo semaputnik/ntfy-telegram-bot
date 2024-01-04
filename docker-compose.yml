@@ -1,0 +1,15 @@
+version: "0.1"
+services:
+  bot:
+    build: .
+    container_name: notifier_bot
+    volumes:
+      - $PWD/data:/app/data
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+    command: python kvartirnik_bot/main.py
