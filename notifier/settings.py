@@ -11,11 +11,11 @@ class Settings(BaseSettings):
     host: str = Field(alias="HOST")
     port: str = Field(alias="PORT")
     topics_raw_string: str = Field(alias="TOPICS")
-    chat_id: str = Field(alias="CHAT_ID", default="41512748")
+    chat_id: str = Field(alias="CHAT_ID", default="")
 
     @property
     def base_url(self):
-        return f"ws://{self.host}/{{}}/ws"
+        return f"ws://{self.host}:{self.port}/{{}}/ws"
 
     @property
     def topics(self) -> list[str]:
