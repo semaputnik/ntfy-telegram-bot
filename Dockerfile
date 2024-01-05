@@ -1,8 +1,8 @@
-FROM python:3.11
+FROM python:3.12
 
 RUN mkdir /app
 
-COPY /kvartirnik_bot /app/kvartirnik_bot
+COPY /notifier /app/notifier
 COPY pyproject.toml /app
 
 WORKDIR /app
